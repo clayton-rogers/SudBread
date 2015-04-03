@@ -55,29 +55,29 @@
 #include <sys/time.h>			// for gettimeofday()
 
 class CTimer {
-	timeval startTime;
-	timeval stopTime;
+    timeval startTime;
+    timeval stopTime;
 public:
-	CTimer () {
-		// Set both start and stop time to now
-		// The start time is last so that getting the stoptime is not included in the run
-		gettimeofday(&stopTime, NULL);
-		gettimeofday(&startTime, NULL);
-	}
-	void startTimer () {
-		// Reset start and stop time to now
-		// The start time is last so that getting the stoptime is not included in the run
-		gettimeofday(&stopTime, NULL);
-		gettimeofday(&startTime, NULL);
-	}
-	void stopTimer () {
-		// Set the stop time to now
-		gettimeofday(&stopTime, NULL);
-	}
-	double readTimer();
-	double readTimerSec();
-	double readLapTime();
-	double readLapTimeSec();
+    CTimer () {
+        // Set both start and stop time to now
+        // The start time is last so that getting the stoptime is not included in the run
+        gettimeofday(&stopTime, NULL);
+        gettimeofday(&startTime, NULL);
+    }
+    void startTimer () {
+        // Reset start and stop time to now
+        // The start time is last so that getting the stoptime is not included in the run
+        gettimeofday(&stopTime, NULL);
+        gettimeofday(&startTime, NULL);
+    }
+    void stopTimer () {
+        // Set the stop time to now
+        gettimeofday(&stopTime, NULL);
+    }
+    double readTimer();
+    double readTimerSec();
+    double readLapTime();
+    double readLapTimeSec();
 };
 
 #endif
