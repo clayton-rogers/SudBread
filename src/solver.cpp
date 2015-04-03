@@ -85,7 +85,7 @@ void Solve (CSquare grid[]) {
 	// Logic(grid);
 	
 	// This is the solving algorithm, it keeps doing this loop until it finds a sol'n
-	// (is it posible that it never finds a sol'n and gets stuck here?) I don't think so
+	// (is it possible that it never finds a sol'n and gets stuck here?) I don't think so
 	while (1) {
 		
 		if (grid[curSquare].value == 9) {

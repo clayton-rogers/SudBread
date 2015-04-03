@@ -1,5 +1,3 @@
-//*** Runs the time trial, testing the speed of the algorithm ***//
-
 #ifndef TIMETRIAL_H
 #define TIMETRIAL_H
 

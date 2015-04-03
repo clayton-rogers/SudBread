@@ -54,10 +54,6 @@
 
 #include <sys/time.h>			// for gettimeofday()
 
-#ifndef NULL
-#define NULL 0
-#endif
-
 class CTimer {
 	timeval startTime;
 	timeval stopTime;
