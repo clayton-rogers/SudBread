@@ -1,6 +1,13 @@
-//*** File operations ***//
-
 #include "fileop.h"
+
+#include <iostream>				// Cin / Cout
+#include <fstream>				// File input / Output
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+using std::ifstream;
 
 void GetGrid (CSquare grid[]) {
     // Get the filename from user, then fetch the file contents

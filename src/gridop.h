@@ -3,7 +3,6 @@
 #ifndef GRIDOP_H
 #define GRIDOP_H
 
-#include <iostream>
 #include "CSquare.h"
 
 void PrintGrid (CSquare grid[]);						// Prints the grid on the screen

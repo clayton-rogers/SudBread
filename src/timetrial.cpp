@@ -1,6 +1,20 @@
-//*** Runs the time trial, testing the speed of the algorithm ***//
-
 #include "timetrial.h"
+
+#include <iostream>
+
+#include "timer.h"	            // Timer object
+#include "stringop.h"           // String manipulation
+#include "CSquare.h"			// Class CSquare
+#include "solver.h"				// Functions used to solve the sudoku
+#include "fileop.h"				// File operations
+#include "gridop.h"				// Grid operations
+
+using stringop::length;
+using stringop::addone;
+
+using std::cout;
+using std::cin;
+using std::endl;
 
 void RunUnitTest (int MAX) {
     // Run the unit test and output the results

@@ -1,5 +1,3 @@
-//*** Creates a timer object that can be used to accurately time stuff ***//
-
 #include "timer.h"
 
 double CTimer::readTimer() {

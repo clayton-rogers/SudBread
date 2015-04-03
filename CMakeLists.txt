@@ -11,6 +11,7 @@ set(SOURCE_FILES
     src/timetrial.cpp
     src/timer.cpp
     src/stringop.cpp
+    src/CSquare.h
 )
 
 add_executable(SudBread_clion ${SOURCE_FILES})

@@ -1,8 +1,6 @@
 #ifndef STRINGOP_H
 #define STRINGOP_H
 
-#include <iostream>
-
 namespace stringop {
 
 int length (char* letters);					// Returns the length of a null-terminated string

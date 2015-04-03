@@ -78,7 +78,7 @@ namespace stringop {
     }
 
     void cat(char * text, char * text2) {
-        // Concatenacates two strings
+        // Concatenates two strings
 
         int len1 = length(text);
         int len2 = length(text2);

@@ -10,7 +10,7 @@
  * 	<sys/time.h>
  * 		
  * 
- * TO DO:
+ * TODO:
  * 	make a way of restarting from the previous time value
  * 	^ this can be done fairly easily from within the program
  * 

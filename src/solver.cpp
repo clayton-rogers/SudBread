@@ -1,6 +1,13 @@
-// Includes all the code that actually solves the sudoku
-
 #include "solver.h"
+
+#include <iostream>
+
+#include "gridop.h"				// To modify the grids
+
+using std::cout;
+using std::endl;
+
+const int MAX_SOLN = 30;		// The maximum number of solutions before the programs quits
 
 bool IsGridCoherent (CSquare grid[]) {
     // Checks for any problems with the current grid

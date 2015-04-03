@@ -1,6 +1,6 @@
-//*** Grid operations ***//
-
 #include "gridop.h"
+
+#include <iostream>
 
 using namespace std;
 
