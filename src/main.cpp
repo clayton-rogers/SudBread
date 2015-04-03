@@ -9,10 +9,8 @@
 #include "timetrial.h"			// Unit test / time trial
 #include "fileop.h"
 
-// ^ Should not require all these headers - Yes, it does
+// TODO Should not require all these headers, but it does
 
-
-// Standard in/out
 using std::cout;
 using std::cin;
 using std::endl;
@@ -22,7 +20,7 @@ using stringop::isSame;
 using stringop::copy;
 
 // Functions
-void usage();
+void print_usage();
 
 // Const
 const int MAX = 20;		// The maximum number of Sudokus that can be solved
@@ -40,7 +38,7 @@ int main(int argc, char **argv)
 
         arg = argv[1];
         if (arg[0] != '-') {
-            usage();
+            print_usage();
             return 1;
         }
 
@@ -54,7 +52,7 @@ int main(int argc, char **argv)
                 // Full argument
                 give(test, "--help");
                 if (isSame(arg, test)) {
-                    usage();
+                    print_usage();
                     return 0;
                 }
                 give(test, "--file");
@@ -66,7 +64,7 @@ int main(int argc, char **argv)
             } else {
                 // Short argument
                 if (arg[1] == 'h') {
-                    usage();
+                    print_usage();
                     return 0;
                 }
                 if (arg[1] == 'f') {
@@ -204,7 +202,7 @@ int main(int argc, char **argv)
 }
 
 
-void usage() {
+void print_usage() {
     cout << "usage: SudBread [OPTION]" << endl
          << "Solves Sudoku puzzles" << endl
          << "	OPTIONS:" << endl
