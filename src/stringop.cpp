@@ -1,19 +1,8 @@
+#include <ctype.h>
 #include "stringop.h"
 
 namespace stringop {
-    int length (char* letters) {
-        // Returns the length of a null-terminated string
-
-        int num = 0;
-
-        while (letters[num] != '\0') {
-            num++;
-        }
-
-        return num;
-    }
-
-    int length (const char* letters) {
+    int get_length(const char *letters) {
         // Returns the length of a null-terminated string
 
         int num = 0;
@@ -40,24 +29,24 @@ namespace stringop {
     }
 */
 
-    void addone (char* letters) {
+    void add_one(char *letters) {
         // Adds one to the last character of the string
 
         // Find the end of the string
-        int leng = length(letters);
+        int length = get_length(letters);
 
         // Good up to 99
-        if (letters[leng-1] == '9') {
-            if (isNum(letters[leng-2])) {
-                letters[leng-2]++;
-                letters[leng-1] = '0';
+        if (letters[length -1] == '9') {
+            if (isdigit(letters[length -2])) {
+                letters[length -2]++;
+                letters[length -1] = '0';
             } else {
-                letters[leng-1] = '1';
-                letters[leng] = '0';
-                letters[leng+1] = '\0';
+                letters[length -1] = '1';
+                letters[length] = '0';
+                letters[length +1] = '\0';
             }
         } else {
-            letters[leng-1]++;
+            letters[length -1]++;
         }
 
         return;
@@ -68,7 +57,7 @@ namespace stringop {
         // NOTE: The char * is assumed to be big enough
 
         // Find the length of the input
-        int len = length(value);
+        int len = get_length(value);
 
         // Copy the whole thing
         for (int i = 0; i < len; ++i) {
@@ -77,44 +66,11 @@ namespace stringop {
         text[len] = '\0';
     }
 
-    void cat(char * text, char * text2) {
-        // Concatenates two strings
-
-        int len1 = length(text);
-        int len2 = length(text2);
-
-        for (int i = 0; i < len2; ++i) {
-            text[i+len1] = text2[i];
-        }
-        text[len1+len2] = '\0';
-
-    }
-
-    bool isNum(char n) {
-        // Tests to see if the character is a number
-
-        if (n == '0' ||
-            n == '1' ||
-            n == '2' ||
-            n == '3' ||
-            n == '4' ||
-            n == '5' ||
-            n == '6' ||
-            n == '7' ||
-            n == '8' ||
-            n == '9') {
-                return true;
-        } else {
-            return false;
-        }
-
-    }
-
     bool isSame(char * word1, char * word2) {
         // Tests whether two strings are the same
 
-        int len1 = length(word1);
-        int len2 = length(word2);
+        int len1 = get_length(word1);
+        int len2 = get_length(word2);
 
         if (len1 != len2) {
             return false;
@@ -132,7 +88,7 @@ namespace stringop {
     void copy (char* word1, char* word2) {
         // Copies string from word2 to word1
 
-        int len = length(word2);
+        int len = get_length(word2);
 
         for (int i = 0; i < len; ++i) {
             word1[i] = word2[i];

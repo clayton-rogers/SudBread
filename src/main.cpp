@@ -25,11 +25,8 @@ using stringop::copy;
 void usage();
 
 // Const
-const int MAX = 20;		// The maximum number of sudoku's that can be solved
+const int MAX = 20;		// The maximum number of Sudokus that can be solved
 
-// ******** //
-// int main //
-// ******** //
 int main(int argc, char **argv)
 {
 
@@ -119,12 +116,9 @@ int main(int argc, char **argv)
     // If the input fails assume regular
     if (cin.fail()) {
         benchmark = false;
-    }
-    // Otherwise set based on answer
-    if (toupper(ans) == 'B') {
-        benchmark = true;
     } else {
-        benchmark = false;
+        // Otherwise set based on answer
+        benchmark = toupper(ans) == 'B';
     }
 
     // Make sure the input is completely clear
@@ -142,7 +136,7 @@ int main(int argc, char **argv)
             cout << "How many Sudoku's should be solved (0 to exit): ";
             cin >> ans_num;
 
-            // Incase input cannot be interpreted as an integer or other error
+            // In case input cannot be interpreted as an integer or other error
             if (cin.fail() || ans_num < 0) {
                 // Make sure the input is completely clear
                 cin.clear();
@@ -156,7 +150,7 @@ int main(int argc, char **argv)
                 return 0;
             }
 
-            // Catch exessive sized test
+            // Catch excessive sized test
             if (ans_num > MAX) {
                 cout << "That's too many runs..." << endl;
                 cin.clear();
@@ -189,7 +183,7 @@ int main(int argc, char **argv)
         PrintGrid(grid);
         cout << endl;
 
-        // Check to make sure the grid loaded is infact good
+        // Check to make sure the grid loaded is in fact good
         if (!IsGridCoherent(grid)) {
             cout << endl << "This Sudoku is not solvable..." << endl;
             return 1;

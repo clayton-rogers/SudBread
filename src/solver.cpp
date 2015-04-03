@@ -1,19 +1,20 @@
 #include "solver.h"
 
 #include <iostream>
+#include <stdexcept>
 
 #include "gridop.h"				// To modify the grids
 
 using std::cout;
 using std::endl;
 
-const int MAX_SOLN = 30;		// The maximum number of solutions before the programs quits
+const int MAX_SOLUTIONS = 30;		// The maximum number of solutions before the programs quits
 
 bool IsGridCoherent (CSquare grid[]) {
     // Checks for any problems with the current grid
 
     // Set of counter bins
-    int x[9] = { 0 };
+    int x[9] = { };
 
     // Check horizontal lines for doubles
     for (int line = 0; line != 9; ++line) {
@@ -24,7 +25,9 @@ bool IsGridCoherent (CSquare grid[]) {
 
         // Check if any bin has > 1
         for (int i = 0; i != 9; ++i) {
-            if (x[i] > 1) return false;
+            if (x[i] > 1) {
+                return false;
+            }
 
             // Reset x[i] to zero for the next round
             x[i] = 0;
@@ -132,7 +135,7 @@ void Solve (CSquare grid[]) {
                 PrintGrid(grid);
                 cout << endl;
                 numSoln++;
-                if (numSoln >= MAX_SOLN) {
+                if (numSoln >= MAX_SOLUTIONS) {
                     cout << "ERROR: Too many solutions..." << endl;
                     break;
                 }
@@ -216,7 +219,7 @@ void Logic (CSquare grid[]) {
                 }
                 if (sum == 8) {
                     for (int i = 0; i != 9; ++i) {
-                        if (isThere == 0) {
+                        if (isThere[i] == 0) {
                             grid[pos].value = i;
                             grid[pos].original = true;
                             // We set orig tp true because we are sure of this ans
@@ -245,7 +248,11 @@ int smallSquare(int pos) {
 }
 
 int fix(int l) {
-    int out;
+    int out = 0;
+
+    if (l < 0 || l > 8) {
+        throw new std::invalid_argument("Parameter 'l' in 'fix(int l)' is invalid.");
+    }
 
     if (l == 0)
         out = 0;

@@ -5,7 +5,9 @@
       <w>endl</w>
       <w>ifstream</w>
       <w>prefilled</w>
+      <w>stringop</w>
       <w>sudoku</w>
+      <w>sudokus</w>
     </words>
   </dictionary>
 </component>

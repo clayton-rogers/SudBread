@@ -9,8 +9,8 @@
 #include "fileop.h"				// File operations
 #include "gridop.h"				// Grid operations
 
-using stringop::length;
-using stringop::addone;
+using stringop::get_length;
+using stringop::add_one;
 
 using std::cout;
 using std::cin;
@@ -33,7 +33,7 @@ void RunUnitTest (int MAX) {
     for (int i = 1; i <= MAX; ++i) {
 
         // Increment the filename
-        addone(filename);
+        add_one(filename);
         cout << endl << "Filename: " << filename << endl;
 
         // Put the contents of the file into the grid
@@ -78,7 +78,7 @@ void RunUnitTest (int MAX) {
 }
 
 void GetFilename (char basename[]) {
-    // Asks the user what basefilename and then creates the rest
+    // Asks the user what base filename and then creates the rest
 
     int len;
 
@@ -87,7 +87,7 @@ void GetFilename (char basename[]) {
     cin >> basename;
 
     // Append a one to the end of the basename
-    len = length(basename);
+    len = get_length(basename);
     basename[len] = '0';
     basename[len+1] = '\0';
 

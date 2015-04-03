@@ -7,4 +7,4 @@ struct CSquare {			// An array is used to represent the entire puzzle
     bool original;			// Whether the value was one of the original inputs
 };
 
-#endif
+#endif // SUDBREAD_CSQUARE_H

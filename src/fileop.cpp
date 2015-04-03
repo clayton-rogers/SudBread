@@ -1,7 +1,7 @@
 #include "fileop.h"
 
-#include <iostream>				// Cin / Cout
-#include <fstream>				// File input / Output
+#include <iostream>
+#include <fstream>
 
 using std::cout;
 using std::cin;
@@ -39,11 +39,7 @@ void GetGrid (CSquare grid[]) {
         fin >> grid[i].value;
 
         // Set original; makes the value protected
-        if (grid[i].value != 0) {
-            grid[i].original = true;
-        } else {
-            grid[i].original = false;
-        }
+        grid[i].original = grid[i].value != 0;
     }
 }
 
@@ -64,10 +60,6 @@ void ReadFile (CSquare grid[], char filename[]) {
         fin >> grid[i].value;
 
         // Set original; makes the value protected
-        if (grid[i].value != 0) {
-            grid[i].original = true;
-        } else {
-            grid[i].original = false;
-        }
+        grid[i].original = grid[i].value != 0;
     }
 }

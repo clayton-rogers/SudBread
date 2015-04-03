@@ -8,7 +8,7 @@
 //*** Sudoku solver functions ***//
 bool IsGridCoherent (CSquare grid[]);	// Checks for any problems with the current grid
 void Solve (CSquare grid[]);			// The function that does the solving and prints every solution found
-void Logic (CSquare grid[]);			// Used logic to solve as much of the SUdoku puzzle as posible
+void Logic (CSquare grid[]);			// Used logic to solve as much of the Sudoku puzzle as possible
 int smallSquare(int pos);				// Returns which small square the square is in
 int fix(int);
 int FindNumSolved (CSquare grid[]);		// Finds the number of squares that have been filled out
