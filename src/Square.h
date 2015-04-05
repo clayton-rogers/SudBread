@@ -1,5 +1,5 @@
-#ifndef CSQUARE_H
-#define CSQUARE_H
+#ifndef SQUARE_H
+#define SQUARE_H
 
 //*** The Sudoku square class, 81 per Sudoku ***//
 struct Square {			// An array is used to represent the entire puzzle
