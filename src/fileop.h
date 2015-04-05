@@ -1,9 +1,9 @@
 #ifndef FILEOP_H
 #define FILEOP_H
 
-#include "CSquare.h"
+#include "Square.h"
 
-void GetGrid (CSquare grid[]);							// Get the filename from user, then fetch the file contents
-void ReadFile (CSquare grid[], char filename[]);		// Read the file and put the contents into the array
+void GetGrid (Square grid[]);							// Get the filename from user, then fetch the file contents
+void ReadFile (Square grid[], char filename[]);		// Read the file and put the contents into the array
 
 #endif

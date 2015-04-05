@@ -10,7 +10,7 @@ using std::endl;
 
 const int MAX_SOLUTIONS = 30;		// The maximum number of solutions before the programs quits
 
-bool IsGridCoherent (CSquare grid[]) {
+bool IsGridCoherent (Square grid[]) {
     // Checks for any problems with the current grid
 
     // Set of counter bins
@@ -80,7 +80,7 @@ bool IsGridCoherent (CSquare grid[]) {
     return true;
 }
 
-void Solve (CSquare grid[]) {
+void Solve (Square grid[]) {
     // The function that does the solving and prints every solution found
     // TODO: Look over solver
     int numSolved = 0;						// The number of numbers there currently are on the grid
@@ -158,7 +158,7 @@ void Solve (CSquare grid[]) {
 
 }
 
-void Logic (CSquare grid[]) {
+void Logic (Square grid[]) {
     // Uses logic to solve the sudoku
 
     //TODO: Write logic
@@ -276,7 +276,7 @@ int fix(int l) {
     return out;
 }
 
-int FindFirstEmpty (CSquare grid[]) {
+int FindFirstEmpty (Square grid[]) {
     // Returns the first empty square in the grid
 
     for (int i = 0; i < 81; ++i) {
@@ -286,7 +286,7 @@ int FindFirstEmpty (CSquare grid[]) {
     return 81;
 }
 
-int FindNumSolved (CSquare grid[]) {
+int FindNumSolved (Square grid[]) {
     // Finds the number of squares that have been filled out
 
     int num = 0;

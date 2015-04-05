@@ -9,7 +9,7 @@ using std::endl;
 
 using std::ifstream;
 
-void GetGrid (CSquare grid[]) {
+void GetGrid (Square grid[]) {
     // Get the filename from user, then fetch the file contents
 
     ifstream fin;
@@ -43,7 +43,7 @@ void GetGrid (CSquare grid[]) {
     }
 }
 
-void ReadFile (CSquare grid[], char filename[]) {
+void ReadFile (Square grid[], char filename[]) {
     // Read the file and put the contents into the array
 
     ifstream fin;

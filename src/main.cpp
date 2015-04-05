@@ -3,7 +3,7 @@
 
 #include "timer.h"	            // The timerclass
 #include "stringop.h"           // String FXs
-#include "CSquare.h"			// Class CSquare
+#include "Square.h"
 #include "gridop.h"				// Grid operations
 #include "solver.h"				// Functions used to solve the sudoku
 #include "timetrial.h"			// Unit test / time trial
@@ -33,7 +33,7 @@ int main(int argc, char **argv)
         char * arg;
         char * filename = new char[100];
         char * test = new char[100];
-        CSquare grid[81];
+        Square grid[81];
         CTimer timer;
 
         arg = argv[1];
@@ -170,7 +170,7 @@ int main(int argc, char **argv)
     } else {
         // Execute the program as normal
 
-        CSquare grid[81];			// Where we are holding the current sudoku puzzle
+        Square grid[81];			// Where we are holding the current sudoku puzzle
         CTimer timer;				// Timer object
 
         // Ask the user where the sudoku is and retrieve it

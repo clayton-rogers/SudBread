@@ -4,7 +4,7 @@
 
 #include "timer.h"	            // Timer object
 #include "stringop.h"           // String manipulation
-#include "CSquare.h"			// Class CSquare
+#include "Square.h"
 #include "solver.h"				// Functions used to solve the sudoku
 #include "fileop.h"				// File operations
 #include "gridop.h"				// Grid operations
@@ -19,7 +19,7 @@ using std::endl;
 void RunUnitTest (int MAX) {
     // Run the unit test and output the results
 
-    CSquare grid[81];		// Spot to hold the current Sudoku puzzle
+    Square grid[81];		// Spot to hold the current Sudoku puzzle
     CTimer timer;			// To time the runs
 
     double totalTime = 0;

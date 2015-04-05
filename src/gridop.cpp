@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void PrintGrid (CSquare grid[]) {
+void PrintGrid (Square grid[]) {
     // Prints the grid on the screen
 
     // Prints '-' when the value is not known
@@ -20,7 +20,7 @@ void PrintGrid (CSquare grid[]) {
     }
 }
 
-void MoveGrid (CSquare grid1[], CSquare grid2[]) {
+void MoveGrid (Square grid1[], Square grid2[]) {
     // Move the values from grid 1 to 2
 
     for (int i = 0; i <= 80; ++i) {
@@ -29,11 +29,11 @@ void MoveGrid (CSquare grid1[], CSquare grid2[]) {
     }
 }
 
-void SwapGrid (CSquare grid1[], CSquare grid2[]) {
+void SwapGrid (Square grid1[], Square grid2[]) {
     // Swaps the grids
 
     // Create a temp holding
-    CSquare tmp[81];
+    Square tmp[81];
 
     // Do the move operations
     MoveGrid(grid2, tmp);

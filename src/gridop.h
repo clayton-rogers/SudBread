@@ -3,10 +3,10 @@
 #ifndef GRIDOP_H
 #define GRIDOP_H
 
-#include "CSquare.h"
+#include "Square.h"
 
-void PrintGrid (CSquare grid[]);						// Prints the grid on the screen
-void MoveGrid (CSquare grid1[], CSquare grid2[]);		// Move the values from grid 1 to 2
-void SwapGrid (CSquare grid1[], CSquare grid2[]);		// Swaps the grids
+void PrintGrid (Square grid[]);						// Prints the grid on the screen
+void MoveGrid (Square grid1[], Square grid2[]);		// Move the values from grid 1 to 2
+void SwapGrid (Square grid1[], Square grid2[]);		// Swaps the grids
 
 #endif
