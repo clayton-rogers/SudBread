@@ -15,12 +15,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 \
 set(SOURCE_FILES
     src/fileop.cpp
     src/gridop.cpp
-    src/main.cpp
     src/solver.cpp
     src/timetrial.cpp
     src/timer.cpp
     src/stringop.cpp
     src/Square.h
+    src/Board.cpp
 )
 
-add_executable(SudBread_clion ${SOURCE_FILES})
+add_executable(SudBread_clion ${SOURCE_FILES} src/main.cpp)
+add_executable(SudBread_test  ${SOURCE_FILES} src/test_main.cpp)

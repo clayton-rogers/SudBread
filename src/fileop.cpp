@@ -36,10 +36,10 @@ void GetGrid (Square grid[]) {
     // Do the actual reading into the array
     for (int i = 0; i <= 80; ++i) {
 
-        fin >> grid[i].value;
+        fin >> grid[i].m_value;
 
         // Set original; makes the value protected
-        grid[i].original = grid[i].value != 0;
+        grid[i].m_original = grid[i].m_value != 0;
     }
 }
 
@@ -50,16 +50,16 @@ void ReadFile (Square grid[], char filename[]) {
     fin.open(filename);
 
     if (fin.fail()) {
-        grid[0].value = -1;
+        grid[0].m_value = -1;
         return;
     }
 
     // Do the actual reading into the array
     for (int i = 0; i < 81; ++i) {
 
-        fin >> grid[i].value;
+        fin >> grid[i].m_value;
 
         // Set original; makes the value protected
-        grid[i].original = grid[i].value != 0;
+        grid[i].m_original = grid[i].m_value != 0;
     }
 }

@@ -20,7 +20,7 @@ bool IsGridCoherent (Square grid[]) {
     for (int line = 0; line != 9; ++line) {
         for (int pos = 0; pos != 9; ++pos) {
             // Add one to the proper bin
-            x[grid[line*9 + pos].value -1]++;
+            x[grid[line*9 + pos].m_value -1]++;
         }
 
         // Check if any bin has > 1
@@ -38,7 +38,7 @@ bool IsGridCoherent (Square grid[]) {
     for (int pos = 0; pos != 9; ++pos) {
         for (int line = 0; line != 9; ++line) {
             // Add one to the proper bin
-            x[grid[line*9 + pos].value -1]++;
+            x[grid[line*9 + pos].m_value -1]++;
         }
 
         // Check if any bin has > 1
@@ -61,7 +61,7 @@ bool IsGridCoherent (Square grid[]) {
                     // for each of the squares in each 3x3
 
                     // add one to the appropriate bin
-                    x[( grid[ (sline*3+line)*9 + (spos*3+pos) ].value )-1]++;
+                    x[( grid[ (sline*3+line)*9 + (spos*3+pos) ].m_value)-1]++;
 
                 }
             }
@@ -98,7 +98,7 @@ void Solve (Square grid[]) {
     // (is it possible that it never finds a sol'n and gets stuck here?) I don't think so
     while (1) {
 
-        if (grid[curSquare].value == 9) {
+        if (grid[curSquare].m_value == 9) {
 
             if (curSquare == firstEmpty) {
                 cout << "End of seaching..." << endl;
@@ -106,25 +106,25 @@ void Solve (Square grid[]) {
             }
 
             // We have hit a dead end and must go back
-            grid[curSquare].value = 0;
+            grid[curSquare].m_value = 0;
             numSolved--;
 
             // Backup and keep backing up till one that is not original
             do {
                 curSquare--;
-            } while (grid[curSquare].original);
+            } while (grid[curSquare].m_original);
 
             continue;
 
         }
 
         // Check if we've been to this square before
-        if (grid[curSquare].value == 0) {
+        if (grid[curSquare].m_value == 0) {
             numSolved++;
         }
 
         // Either way, add one
-        grid[curSquare].value++;
+        grid[curSquare].m_value++;
 
         // Check the state
         if (!IsGridCoherent(grid)) {
@@ -142,14 +142,14 @@ void Solve (Square grid[]) {
                 // It's impossible for any other value to work
                 // so going straight to 9 pevents a few loops
                 // (because the value that's there now is a sol'n)
-                grid[curSquare].value = 9;
+                grid[curSquare].m_value = 9;
                 continue;
             }
 
             // Move to the next non-original square
             do {
                 ++curSquare;
-            } while (grid[curSquare].original);
+            } while (grid[curSquare].m_original);
         }
 
     } // end while
@@ -183,33 +183,33 @@ void Logic (Square grid[]) {
 
                 pos = row*9 + col;
 
-                if (grid[row*9+col].value == 0) {
+                if (grid[row*9+col].m_value == 0) {
                     continue;
                 }
 
                 // Check the relevant col
                 for (int i = 0; i < 9; ++i) {
-                    isThere[grid[i*9+col].value-1] = 1;
+                    isThere[grid[i*9+col].m_value -1] = 1;
                 }
 
                 // Check the relevant rows
                 for (int i = 0; i < 9; ++i) {
-                    isThere[grid[row*9+i].value-1] = 1;
+                    isThere[grid[row*9+i].m_value -1] = 1;
                 }
 
                 // Figure out which square the square is in and check those
                 location = smallSquare(pos);
                 location = fix(location);
                 for (int i = 0; i != 3; ++i) {
-                    isThere[grid[row*9+i+location].value-1] = 1;
+                    isThere[grid[row*9+i+location].m_value -1] = 1;
                 }
                 location += 9;
                 for (int i = 0; i != 3; ++i) {
-                    isThere[grid[row*9+i+location].value-1] = 1;
+                    isThere[grid[row*9+i+location].m_value -1] = 1;
                 }
                 location += 9;
                 for (int i = 0; i != 3; ++i) {
-                    isThere[grid[row*9+i+location].value-1] = 1;
+                    isThere[grid[row*9+i+location].m_value -1] = 1;
                 }
 
                 // Figure out if we can put a number in this
@@ -220,8 +220,8 @@ void Logic (Square grid[]) {
                 if (sum == 8) {
                     for (int i = 0; i != 9; ++i) {
                         if (isThere[i] == 0) {
-                            grid[pos].value = i;
-                            grid[pos].original = true;
+                            grid[pos].m_value = i;
+                            grid[pos].m_original = true;
                             // We set orig tp true because we are sure of this ans
                         }
                     }
@@ -280,7 +280,7 @@ int FindFirstEmpty (Square grid[]) {
     // Returns the first empty square in the grid
 
     for (int i = 0; i < 81; ++i) {
-        if (grid[i].value == 0) return i;
+        if (grid[i].m_value == 0) return i;
     }
 
     return 81;
@@ -292,7 +292,7 @@ int FindNumSolved (Square grid[]) {
     int num = 0;
 
     for (int i = 0; i < 81; ++i) {
-        if (grid[i].value != 0)
+        if (grid[i].m_value != 0)
             ++num;
     }
 

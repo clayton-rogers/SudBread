@@ -76,7 +76,7 @@ int main(int argc, char **argv)
 
             // Load the Sudoku puzzle from file
             ReadFile (grid, filename);
-            if (grid[0].value == -1) {
+            if (grid[0].m_value == -1) {
                 cout << "The file " << filename << " could not be opened..." << endl;
                 return 1;
             }
