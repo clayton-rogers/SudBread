@@ -14,7 +14,7 @@ bool IsGridCoherent (Square grid[]) {
     // Checks for any problems with the current grid
 
     // Set of counter bins
-    int x[9] = { };
+    int x[10] = { };
 
     // Check horizontal lines for doubles
     for (int line = 0; line != 9; ++line) {
@@ -163,7 +163,7 @@ void Logic (Square grid[]) {
 
     //TODO: Write logic
 
-    int isThere[9];		// Whether that particular number is there
+    int isThere[10];		// Whether that particular number is there
     int pos; 			// The position out of 81
     int location;
     int sum;
