@@ -20,7 +20,10 @@ bool IsGridCoherent (CSquare grid[]) {
     for (int line = 0; line != 9; ++line) {
         for (int pos = 0; pos != 9; ++pos) {
             // Add one to the proper bin
-            x[grid[line*9 + pos].value -1]++;
+            const int square_value = grid[line*9 + pos].value;
+            if (square_value != 0) {
+                x[grid[line*9 + pos].value -1]++;
+            }
         }
 
         // Check if any bin has > 1
